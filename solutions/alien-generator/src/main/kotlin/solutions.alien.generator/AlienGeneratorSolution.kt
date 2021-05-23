@@ -9,5 +9,20 @@ fun main(args: Array<String>) {
 }
 
 fun countPossibleValuesForK(goldBarsObjective: Int): Int {
-    return 0
+    var i = 1
+    var numberOfPossibleValuesForK = 0
+    while (i <= goldBarsObjective) {
+        var j = i
+        var sum = 0
+        while(sum < goldBarsObjective) {
+            sum+=j
+            ++j
+        }
+
+        if(sum == goldBarsObjective) {
+            ++numberOfPossibleValuesForK
+        }
+        ++i
+    }
+    return numberOfPossibleValuesForK
 }
