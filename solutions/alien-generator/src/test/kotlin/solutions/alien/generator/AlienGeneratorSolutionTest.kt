@@ -2,6 +2,7 @@ import org.junit.jupiter.api.DynamicTest.dynamicTest
 import org.junit.jupiter.api.TestFactory
 import strikt.api.expectThat
 import strikt.assertions.isEqualTo
+import java.math.BigInteger
 
 internal class AlienGeneratorSolutionTest {
     @TestFactory
@@ -13,7 +14,7 @@ internal class AlienGeneratorSolutionTest {
             dynamicTest(
                 "given gold bars objective, should count all the possible K values to reach it exactly"
             ) {
-                expectThat(countPossibleValuesForK(G)).isEqualTo(expected)
+                expectThat(countPossibleValuesForK(BigInteger.valueOf(G.toLong()))).isEqualTo(expected)
             }
         }
 }
