@@ -28,7 +28,7 @@ fun isValidK(K: BigInteger, G: BigInteger): Boolean {
 fun countPossibleValuesForK(goldBarsObjective: BigInteger): Int {
     var i = BigInteger.ONE
     var numberOfPossibleValuesForK = 0
-    while (i < goldBarsObjective) {
+    while (i < goldBarsObjective / BigInteger.valueOf(2) + BigInteger.ONE) {
         if (isValidK(i, goldBarsObjective)) {
             ++numberOfPossibleValuesForK
         }
