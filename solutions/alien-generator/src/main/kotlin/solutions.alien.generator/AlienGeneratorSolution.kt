@@ -1,3 +1,5 @@
+import java.math.BigInteger
+
 fun readLineToInt() = readLine()!!.toInt()
 
 fun main(args: Array<String>) {
@@ -9,17 +11,18 @@ fun main(args: Array<String>) {
 }
 
 fun countPossibleValuesForK(goldBarsObjective: Int): Int {
-    var i = 1
+    var i = BigInteger.ONE
     var numberOfPossibleValuesForK = 0
-    while (i <= goldBarsObjective) {
+    val goldBarsObjectiveBigInteger =  BigInteger.valueOf(goldBarsObjective.toLong())
+    while (i <= goldBarsObjectiveBigInteger) {
         var j = i
-        var sum = 0
-        while(sum < goldBarsObjective) {
+        var sum = BigInteger.ZERO
+        while(sum < goldBarsObjectiveBigInteger) {
             sum+=j
             ++j
         }
 
-        if(sum == goldBarsObjective) {
+        if(sum == goldBarsObjectiveBigInteger) {
             ++numberOfPossibleValuesForK
         }
         ++i
