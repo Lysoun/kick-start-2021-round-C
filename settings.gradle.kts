@@ -1,6 +1,5 @@
-rootProject.name = "google-code-jam-2021-solutions"
+rootProject.name = "kick-start-2021-round-C"
 
 include(
-    "solutions:smaller-strings",
     "solutions:alien-generator"
 )
